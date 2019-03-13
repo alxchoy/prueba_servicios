@@ -9,7 +9,10 @@ import { AppState } from '../../../../store/state';
 @Component({
   selector: 'app-home-page',
   template: `
-    <app-services></app-services>
+    <div>
+      <app-header></app-header>
+      <app-services></app-services>
+    </div>
   `,
   styleUrls: []
 })

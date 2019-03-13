@@ -8,17 +8,16 @@ import { AddServices } from '../../../../store/actions';
   selector: 'app-card',
   template: `
     <div class="card">
-      <h3>{{ title }}</h3>
-      <p>{{ description }}</p>
-      <div class="card__footer">
-        <ul>
-          <li><button>Editar</button></li>
-          <li><button>Eliminar</button></li>
-        </ul>
+      <div class="card-body">
+        <h5 class="card-title">{{ title }}</h5>
+        <p class="card-text">{{ description }}</p>
+      </div>
+      <div class="card-footer">
+        <a href="#" class="card-link">Editar</a>
+        <a href="#" class="card-link">Eliminar</a>
       </div>
     </div>
-  `,
-  styleUrls: ['./card.component.scss']
+  `
 })
 export class CardComponent {
   @Input() title: string;
