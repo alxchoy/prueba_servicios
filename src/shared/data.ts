@@ -1,25 +1,37 @@
 const data = [
   {
     id: 1,
-    title: 'Prueba1',
-    category: 'autos',
+    title: 'Electricidad',
+    category: 'hogar',
     description: 'Lorem ipsumn, dolor sit amet consectetur adipisicing elit'
   },
   {
     id: 2,
-    title: 'Prueba2',
+    title: 'Auxilio Mecánico',
     category: 'autos',
     description: 'Lorem ipsumn, dolor sit amet consectetur adipisicing elit'
   },
   {
     id: 3,
-    title: 'Prueba3',
-    category: 'salud',
+    title: 'Chofer Reemplazo',
+    category: 'autos',
     description: 'Lorem ipsumn, dolor sit amet consectetur adipisicing elit'
   },
   {
     id: 4,
-    title: 'Prueba4',
+    title: 'Medico a domicilio',
+    category: 'salud',
+    description: 'Lorem ipsumn, dolor sit amet consectetur adipisicing elit'
+  },
+  {
+    id: 5,
+    title: 'Ambulancia',
+    category: 'salud',
+    description: 'Lorem ipsumn, dolor sit amet consectetur adipisicing elit'
+  },
+  {
+    id: 6,
+    title: 'Gasfitero',
     category: 'hogar',
     description: 'Lorem ipsumn, dolor sit amet consectetur adipisicing elit'
   }

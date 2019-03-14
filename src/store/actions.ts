@@ -5,6 +5,7 @@ export enum ServicesActionsTypes {
   GetAutoServices = '[Services] Get Auto Services',
   GetHomeServices = '[Services] Get Home Services',
   GetHealthServices = '[Services] Get Health Services',
+  AddMultiplesServices = '[Services] Add Multiples Services',
   AddServices = '[Services] Add Services'
 }
 
@@ -32,10 +33,22 @@ export class GetHealthServices implements Action {
   constructor(public payload: any) {}
 }
 
+export class AddMultiplesServices implements Action {
+  public readonly type = ServicesActionsTypes.AddMultiplesServices;
+
+  constructor(public payload: any) {}
+}
+
 export class AddServices implements Action {
   public readonly type = ServicesActionsTypes.AddServices;
 
   constructor(public payload: any) {}
 }
 
-export type ServicesActions = GetAllServices | GetAutoServices | GetHomeServices | GetHealthServices | AddServices;
+export type ServicesActions =
+  | GetAllServices
+  | GetAutoServices
+  | GetHomeServices
+  | GetHealthServices
+  | AddMultiplesServices
+  | AddServices;

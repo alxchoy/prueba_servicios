@@ -3,15 +3,15 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-header',
   template: `
-    <div class="header">
+    <header class="header">
       <h1>Servicios</h1>
-      <nav class="nav">
-        <a class="nav-link active" href="#">Todos</a>
-        <a class="nav-link" href="#">Autos</a>
-        <a class="nav-link" href="#">Salud</a>
-        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Hogar</a>
+      <nav class="nav header__nav">
+        <a routerLink="/todos" routerLinkActive="active" class="nav-link" href="#">Todos</a>
+        <a routerLink="/autos" routerLinkActive="active" class="nav-link" href="#">Autos</a>
+        <a routerLink="/salud" routerLinkActive="active" class="nav-link" href="#">Salud</a>
+        <a routerLink="/hogar" routerLinkActive="active" class="nav-link" href="#">Hogar</a>
       </nav>
-    </div>
+    </header>
   `,
   styleUrls: ['./header.component.scss']
 })

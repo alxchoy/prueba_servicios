@@ -8,6 +8,7 @@ import { DashboardModule } from '../modules/dashboard/dashboard.module';
 import { AppComponent } from './app.component';
 
 import { reducer } from '../store/reducer';
+import { servicesConstants } from '../shared/constants';
 
 @NgModule({
   declarations: [AppComponent],
@@ -16,7 +17,7 @@ import { reducer } from '../store/reducer';
     AppRouteModule,
     DashboardModule,
     StoreModule.forRoot({
-      services: reducer
+      [servicesConstants.propertyNameServicesState]: reducer
     })
   ],
   providers: [],

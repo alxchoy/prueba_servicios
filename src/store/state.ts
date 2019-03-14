@@ -1,4 +1,4 @@
-import { ServiceItem } from './model';
+import { ServiceItem } from '../shared/model';
 
 export interface AppState {
   services: ServiceItem[];
