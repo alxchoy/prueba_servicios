@@ -2,33 +2,14 @@ import { Action } from '@ngrx/store';
 
 export enum ServicesActionsTypes {
   GetAllServices = '[Services] Get All Services',
-  GetAutoServices = '[Services] Get Auto Services',
-  GetHomeServices = '[Services] Get Home Services',
-  GetHealthServices = '[Services] Get Health Services',
   AddMultiplesServices = '[Services] Add Multiples Services',
-  AddServices = '[Services] Add Services'
+  AddServices = '[Services] Add Services',
+  DeleteServices = '[Services] Delete Services',
+  EditServices = '[Services] Edit Services'
 }
 
 export class GetAllServices implements Action {
   public readonly type = ServicesActionsTypes.GetAllServices;
-
-  constructor(public payload: any) {}
-}
-
-export class GetAutoServices implements Action {
-  public readonly type = ServicesActionsTypes.GetAutoServices;
-
-  constructor(public payload: any) {}
-}
-
-export class GetHomeServices implements Action {
-  public readonly type = ServicesActionsTypes.GetHomeServices;
-
-  constructor(public payload: any) {}
-}
-
-export class GetHealthServices implements Action {
-  public readonly type = ServicesActionsTypes.GetHealthServices;
 
   constructor(public payload: any) {}
 }
@@ -45,10 +26,16 @@ export class AddServices implements Action {
   constructor(public payload: any) {}
 }
 
-export type ServicesActions =
-  | GetAllServices
-  | GetAutoServices
-  | GetHomeServices
-  | GetHealthServices
-  | AddMultiplesServices
-  | AddServices;
+export class DeleteServices implements Action {
+  public readonly type = ServicesActionsTypes.DeleteServices;
+
+  constructor(public id: any) {}
+}
+
+export class EditServices implements Action {
+  public readonly type = ServicesActionsTypes.EditServices;
+
+  constructor(public payload: any) {}
+}
+
+export type ServicesActions = GetAllServices | AddMultiplesServices | AddServices | DeleteServices | EditServices;

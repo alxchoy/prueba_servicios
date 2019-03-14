@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 import { from } from 'rxjs';
 import { Store } from '@ngrx/store';
 
@@ -19,16 +19,16 @@ import { servicesSelectors } from '../../../../store/index';
           [title]="service.title"
           [description]="service.description"
           (onDelete)="deleteService(service.id)"
-          (onEdit)="editService(service.id)"
+          (onEdit)="editService(service)"
         >
         </app-card>
       </div>
     </div>
-  `,
-  styleUrls: ['./services.component.scss']
+  `
 })
 export class ServicesComponent implements OnInit {
   @Input() category: string;
+  @Output() onEditService = new EventEmitter();
   listServices: Array<Object>;
   dataSource$ = from([data]);
 
@@ -36,16 +36,17 @@ export class ServicesComponent implements OnInit {
 
   ngOnInit() {
     this._preLoadDataFirstTime();
+
     const selector = this._indetifyCategorySelector(this.category);
     this._store.select(selector).subscribe(res => (this.listServices = res));
   }
 
   deleteService(id) {
-    console.log(`delete service ${id}`);
+    this._store.dispatch(new servicesActions.DeleteServices(id));
   }
 
-  editService(id) {
-    console.log(`edit service ${id}`);
+  editService(service) {
+    this.onEditService.emit(service);
   }
 
   _preLoadDataFirstTime() {

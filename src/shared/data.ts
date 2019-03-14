@@ -7,13 +7,13 @@ const data = [
   },
   {
     id: 2,
-    title: 'Auxilio Mecánico',
+    title: 'Auxilio mecánico',
     category: 'autos',
     description: 'Lorem ipsumn, dolor sit amet consectetur adipisicing elit'
   },
   {
     id: 3,
-    title: 'Chofer Reemplazo',
+    title: 'Chofer reemplazo',
     category: 'autos',
     description: 'Lorem ipsumn, dolor sit amet consectetur adipisicing elit'
   },

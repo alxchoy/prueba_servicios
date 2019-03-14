@@ -7,7 +7,7 @@ export class FormServices {
 
   public serviceForm() {
     return this._formBuilder.group({
-      category: ['', Validators.required],
+      category: ['salud', Validators.required],
       title: ['', Validators.required],
       description: ['', Validators.required]
     });

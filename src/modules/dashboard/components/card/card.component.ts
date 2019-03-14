@@ -1,8 +1,4 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
-import { Store } from '@ngrx/store';
-
-import { AppState } from '../../../../store/state';
-import { AddServices } from '../../../../store/actions';
 
 @Component({
   selector: 'app-card',
@@ -17,7 +13,8 @@ import { AddServices } from '../../../../store/actions';
         <a href="javascript:void(0)" class="card-link" (click)="deleteService($event)">Eliminar</a>
       </div>
     </div>
-  `
+  `,
+  styles: ['.card { height: 200px; }']
 })
 export class CardComponent {
   @Input() title: string;
@@ -25,7 +22,7 @@ export class CardComponent {
   @Output() onDelete = new EventEmitter();
   @Output() onEdit = new EventEmitter();
 
-  constructor(private _store: Store<AppState>) {}
+  constructor() {}
 
   deleteService() {
     this.onDelete.emit();
